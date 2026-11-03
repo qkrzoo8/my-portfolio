@@ -1,5 +1,5 @@
 # Spoken languages with a proficiency label and a percentage (0-100) for the bar.
-- name: "English"
+- name: "Korean"
   level: "Native"
   percent: 100
 
@@ -7,6 +7,10 @@
   level: "Intermediate"
   percent: 60
 
+- name: "Chinese"
+  level: "Elementary"
+  percent: 30
+
 - name: "Japanese"
   level: "Elementary"
-  percent: 33
+  percent: 30
