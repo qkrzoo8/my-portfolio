@@ -8,13 +8,11 @@ title = '박주연 | portfolio'
   lastName = "Juyeon"
   tagline = "Computer & AI Student"
   email = "wndus1006@jbnu.ac.kr"
-  linkedin = "https://www.linkedin.com/in/example/"
-  location = "Remote"
+  location = "전북대학교"
   profileImage = "images/profile.png"
   heroBackground = "/images/hero-bg.png"
   favicon = "/favicon.svg"
   ogImage = "/opengraph.jpg"
-  resumeFile = "/resume.pdf"
   description = "인공지능과 소프트웨어 개발을 공부하는 박주연의 포트폴리오"
 
 disableKinds = ['taxonomy', 'term']
