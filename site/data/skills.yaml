@@ -1,24 +1,32 @@
-# Skills grouped by category. Each skill shows its `explanation` when clicked.
-- category: "Core Qualifications"
+# 학습 및 개발 역량
+- category: "Core Skills"
   items:
     - name: "Problem Solving"
-      explanation: "Describe how you have applied this skill in your work."
-    - name: "System Design"
-      explanation: "Describe how you have applied this skill in your work."
-    - name: "Technical Leadership"
-      explanation: "Describe how you have applied this skill in your work."
+      explanation: "Python을 활용한 알고리즘 문제 풀이와 인공지능 과제를 수행하며 문제 해결 능력을 키우고 있습니다."
 
-- category: "Technical"
+    - name: "Web Development"
+      explanation: "Spring Boot를 이용한 REST API 개발 실습을 통해 웹 서비스의 구조와 동작 원리를 학습했습니다."
+
+    - name: "Database Design"
+      explanation: "MySQL을 활용하여 데이터베이스를 설계하고, ERD 작성과 정규화 및 SQL 질의를 실습했습니다."
+
+# 기술 및 개발 도구
+- category: "Technical Skills"
   items:
-    - name: "Go"
-      explanation: "Used to build backend services and CLI tools."
     - name: "Python"
-      explanation: "Used for scripting, automation and data tooling."
-    - name: "TypeScript"
-      explanation: "Used to build web frontends and Node services."
+      explanation: "알고리즘 문제 해결과 인공지능 관련 프로젝트에 활용했습니다."
+
+    - name: "Java"
+      explanation: "Spring Boot 기반 웹 서비스 개발 실습에 활용했습니다."
+
+    - name: "Spring Boot"
+      explanation: "REST API 구현과 HTTP 요청 및 응답 처리를 학습했습니다."
+
+    - name: "MySQL"
+      explanation: "관계형 데이터베이스 구축과 데이터 관리에 활용했습니다."
+
     - name: "SQL"
-      explanation: "Used to query and model relational data."
-    - name: "Docker"
-      explanation: "Used to containerize and deploy applications."
-    - name: "Git"
-      explanation: "Used for version control and collaboration."
+      explanation: "데이터 조회, 조인, 서브쿼리 등을 활용한 데이터 처리 실습을 진행했습니다."
+
+    - name: "Git & GitHub"
+      explanation: "프로젝트 버전 관리와 GitHub Actions를 활용한 웹사이트 자동 배포에 사용했습니다."
