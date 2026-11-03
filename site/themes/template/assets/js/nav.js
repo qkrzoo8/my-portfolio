@@ -40,6 +40,7 @@
     mobileMenu.classList.add('open');
     mobileBackdrop.classList.add('open');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
+    hamburgerBtn.setAttribute('aria-label', '메뉴 닫기');
     hamburgerBtn.querySelector('svg:first-child').style.display = 'none';
     hamburgerBtn.querySelector('svg:last-child').style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -49,6 +50,7 @@
     mobileMenu.classList.remove('open');
     mobileBackdrop.classList.remove('open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
+    hamburgerBtn.setAttribute('aria-label', '메뉴 열기');
     hamburgerBtn.querySelector('svg:first-child').style.display = 'block';
     hamburgerBtn.querySelector('svg:last-child').style.display = 'none';
     document.body.style.overflow = '';
@@ -81,6 +83,15 @@
       closeMobileMenu();
       setTimeout(function () { scrollToSection(target); }, 10);
     });
+  });
+
+
+  // Esc 키로 모바일 메뉴 닫기
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+      hamburgerBtn.focus();
+    }
   });
 
   // Initialize
