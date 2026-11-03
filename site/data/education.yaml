@@ -1,8 +1,18 @@
 # Education history, newest first.
-- degree: "BSc in Computer Science"
-  school: "Example University"
-  year: "2019"
 
-- degree: "High School Diploma"
-  school: "Example High School"
-  year: "2015"
+- degree: "컴퓨터인공지능학부 재학 중"
+  school: "전북대학교"
+  year: "2024.03 ~ 현재"
+
+- degree: "고등학교 졸업"
+  school: "전주대학교사범대학부설고등학교"
+  year: "2021.03 ~ 2024.02"
+
+- degree: "중학교 졸업"
+  school: "완산중학교"
+  year: "2018.03 ~ 2021.02"
+
+- degree: "초등학교 졸업"
+  school: "신성초등학교"
+  year: "2012.03 ~ 2018.02"
+
