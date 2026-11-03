@@ -1,34 +1,55 @@
-# Work experience, newest first. Each entry renders as a timeline card.
-# `context`, `projects` and `media_mentions` are optional.
-- company: "Example Corp"
-  title: "Senior Software Engineer"
-  period: "Jan 2022 - Present"
-  context: "Example Corp is a placeholder company used to demonstrate the theme. Replace this with a short description of where you worked."
-  bullets:
-    - "Describe a key responsibility or achievement here."
-    - "Quantify impact where you can (e.g. improved X by 30%)."
-    - "Keep each bullet to a single concise sentence."
-  projects:
-    - title: "Sample Project"
-      desc: "A short one-line description of what this project does."
-      tags:
-        - "Go"
-        - "Distributed Systems"
-    - title: "Another Project"
-      desc: "Another optional project to show under this role."
-      tags:
-        - "TypeScript"
-        - "React"
-  # media_mentions:
-  #   - publication: "Example News"
-  #     article_title: "How Example Corp shipped X"
-  #     excerpt: "A short quote or summary of the article."
-  #     url: "https://example.com/article"
+# 프로젝트 및 개발 경험 (최신순)
 
-- company: "Startup Inc"
-  title: "Software Engineer"
-  period: "Jun 2019 - Dec 2021"
-  context: "Optional context line about the company or team."
+- company: "개인 프로젝트"
+  title: "개인 포트폴리오 웹사이트 구축"
+  period: "2026.11 | 진행 중"
+  context: "Hugo 테마를 활용하여 개인의 기술 역량과 프로젝트 경험을 소개하는 웹사이트를 개발하고 있습니다."
   bullets:
-    - "Built and maintained core product features."
-    - "Collaborated with cross-functional teams to ship releases."
+    - "Hugo 테마를 수정하여 자기소개, 기술 역량, 학력 및 활동 경험을 구성했습니다."
+    - "Git과 GitHub를 활용하여 소스 코드를 관리하고 있습니다."
+    - "GitHub Actions를 이용해 코드 수정 시 자동으로 배포되도록 설정했습니다."
+    - "반응형 화면과 링크 동작을 검증하며 사이트를 개선하고 있습니다."
+  projects:
+    - title: "Personal Portfolio"
+      desc: "Hugo와 GitHub Actions를 활용한 개인 포트폴리오 웹사이트"
+      tags:
+        - "Hugo"
+        - "Git"
+        - "GitHub Actions"
+
+- company: "인공지능 전공 프로젝트"
+  title: "Connect6 인공지능 개발"
+  period: "2026.06 | 완료"
+  context: "육목 게임에서 최적의 착수 위치를 탐색하는 인공지능 에이전트를 개발한 프로젝트입니다."
+  bullets:
+    - "Python을 활용하여 게임 상태를 분석하고 다음 착수 위치를 결정하는 알고리즘을 구현했습니다."
+    - "Minimax와 Alpha-Beta Pruning을 활용하여 탐색 효율을 개선했습니다."
+    - "상대방의 위협을 차단하고 공격 기회를 평가하는 휴리스틱 함수를 설계했습니다."
+    - "반복적인 대국 테스트를 통해 전략의 한계를 분석하고 개선 방향을 도출했습니다."
+  projects:
+    - title: "Connect6 AI Agent"
+      desc: "탐색 알고리즘과 휴리스틱 평가를 활용한 육목 인공지능"
+      tags:
+        - "Python"
+        - "Minimax"
+        - "Alpha-Beta Pruning"
+
+
+- company: "웹서비스설계 개인 프로젝트"
+  title: "JWT 인증 기반 게시판 개발"
+  period: "2026.10 | 완료"
+  context: "JWT 인증과 사용자 권한 관리를 적용한 웹 게시판을 개발한 개인 프로젝트입니다."
+  bullets:
+    - "Vue.js와 Express를 활용하여 프론트엔드와 백엔드를 구현했습니다."
+    - "JWT 기반 로그인 인증과 사용자별 접근 권한을 처리했습니다."
+    - "게시글 작성, 조회, 수정, 삭제 기능을 구현했습니다."
+    - "게시글 작성자만 수정 및 삭제할 수 있도록 권한 검사를 적용했습니다."
+    - "API 테스트를 통해 정상 동작과 인증 및 입력 오류 처리 결과를 확인했습니다."
+  projects:
+    - title: "JWT Board Application"
+      desc: "JWT 인증 및 게시글 CRUD 기능을 제공하는 웹 게시판"
+      tags:
+        - "Vue.js"
+        - "Express"
+        - "SQLite"
+        - "JWT"
