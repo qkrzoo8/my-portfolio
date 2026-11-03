@@ -1,9 +1,13 @@
-# Certifications grouped by year, newest first. Each year holds a list of items.
-- year: "2025"
-  items:
-    - "Example Professional Certification"
 
-- year: "2023"
+# 취득한 자격증
+- year: "2026. 08"
   items:
-    - "Another Certification You Earned"
-    - "A Second Certification From The Same Year"
+    - "ADsP (데이터분석 준전문가) — 취득 완료"
+
+# 취득 준비 중인 자격증
+- year: "준비 중"
+  items:
+    - "빅데이터 분석기사 - 자격증 취득 준비 중"
+    - "컴퓨터활용능력 1급 - 자격증 취득 준비 중"
+    - "정보처리기사 — 자격증 취득 준비 중"
+    - "SQLD (SQL 개발자) — 자격증 취득 준비 중"
