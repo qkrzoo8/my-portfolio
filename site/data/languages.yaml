@@ -3,14 +3,14 @@
   level: "Native"
   percent: 100
 
-- name: "Spanish"
+- name: "English"
   level: "Intermediate"
   percent: 60
-
-- name: "Chinese"
-  level: "Elementary"
-  percent: 30
 
 - name: "Japanese"
   level: "Elementary"
   percent: 30
+
+- name: "Chinese"
+  level: "Elementary"
+  percent: 20
