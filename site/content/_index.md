@@ -1,7 +1,12 @@
 ---
-title: "Jane Doe — Software Engineer"
+title: "박주연  |  Portfolio"
 ---
 
-Hi, I'm Jane. This is the About section, and it is rendered from the body of
-`content/_index.md`. Replace this text with a short introduction about yourself,
-what you do, and what you care about.
+안녕하세요. 저는 컴퓨터인공지능학부에서 공부하고 있는 박주연입니다.
+
+저는 인공지능과 소프트웨어 개발에 관심이 있으며,
+학습한 내용을 실제 프로젝트에 적용하면서 개발 역량을 키우고 있습니다.
+또한 디자인적으로도 깔끔하고 유용적이게 만드는 것을 좋아합니다.
+
+앞으로는 다양한 프로젝트를 통해 문제 해결 능력을 높이고,
+사용자에게 실질적인 도움이 되는 서비스를 개발하는 것이 목표입니다.
