@@ -51,13 +51,32 @@
 
         link.classList.toggle('active', isActive);
 
+
         if (isActive) {
           link.setAttribute('aria-current', 'location');
         } else {
           link.removeAttribute('aria-current');
         }
       });
+
+    // 페이지 스크롤 진행률 계산
+    var progressBar = document.getElementById('scroll-progress');
+
+    if (progressBar) {
+      var scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      var progress = scrollableHeight > 0
+        ? (window.scrollY / scrollableHeight) * 100
+        : 100;
+
+      // 진행률을 0~100% 범위로 제한
+      progress = Math.min(100, Math.max(0, progress));
+
+      progressBar.style.width = progress + '%';
+    }
   }
+
 
 
   // Mobile menu toggle
