@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
+<html lang="{{ .Site.LanguageCode | default " en" }}">
+
 <head>
   {{- partial "head.html" . -}}
 </head>
+
 <body>
+  <!-- 키보드 사용자를 위한 본문 바로가기 -->
+  <a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+
   {{- partial "nav.html" . -}}
   {{- partial "contact-fab.html" . -}}
-  <main>
+  <main id="main-content" tabindex="-1">
+
     {{- block "main" . }}{{ end -}}
   </main>
   {{- partial "footer.html" . -}}
@@ -15,9 +21,14 @@
   {{ $nav := resources.Get "js/nav.js" }}
   {{ $skillsToggle := resources.Get "js/skills-toggle.js" }}
   {{ $contactFab := resources.Get "js/contact-fab.js" }}
-  {{ if $scrollReveal }}<script defer src="{{ $scrollReveal.RelPermalink }}"></script>{{ end }}
-  {{ if $nav }}<script defer src="{{ $nav.RelPermalink }}"></script>{{ end }}
-  {{ if $skillsToggle }}<script defer src="{{ $skillsToggle.RelPermalink }}"></script>{{ end }}
-  {{ if $contactFab }}<script defer src="{{ $contactFab.RelPermalink }}"></script>{{ end }}
+  {{ if $scrollReveal }}
+  <script defer src="{{ $scrollReveal.RelPermalink }}"></script>{{ end }}
+  {{ if $nav }}
+  <script defer src="{{ $nav.RelPermalink }}"></script>{{ end }}
+  {{ if $skillsToggle }}
+  <script defer src="{{ $skillsToggle.RelPermalink }}"></script>{{ end }}
+  {{ if $contactFab }}
+  <script defer src="{{ $contactFab.RelPermalink }}"></script>{{ end }}
 </body>
+
 </html>
