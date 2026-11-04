@@ -57,16 +57,34 @@
   }
 
   // Smooth scroll to section
+
+  // 사용자 설정에 따른 스크롤 동작
   function scrollToSection(id) {
+    var reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    var scrollBehavior = reduceMotion ? 'auto' : 'smooth';
+
     if (id === 'top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({
+        top: 0,
+        behavior: scrollBehavior
+      });
       return;
     }
+
     var el = document.getElementById(id);
     if (!el) return;
+
     var top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-    window.scrollTo({ top: top, behavior: 'smooth' });
+
+    window.scrollTo({
+      top: top,
+      behavior: scrollBehavior
+    });
   }
+
 
   // Event listeners
   window.addEventListener('scroll', handleScroll, { passive: true });
