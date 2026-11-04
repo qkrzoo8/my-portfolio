@@ -82,7 +82,12 @@
     window.scrollTo({
       top: top,
       behavior: scrollBehavior
+
     });
+
+    // 현재 보고 있는 섹션을 URL에 반영
+    window.history.replaceState(null, '', '#' + id);
+
   }
 
 
