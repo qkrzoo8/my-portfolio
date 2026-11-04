@@ -10,7 +10,6 @@ title = '박주연 | portfolio'
   email = "wndus1006@jbnu.ac.kr"
   location = "전북대학교"
   profileImage = "images/profile.png"
-  heroBackground = "/images/hero-bg.png"
   favicon = "/favicon.svg"
   ogImage = "/opengraph.jpg"
   description = "인공지능과 소프트웨어 개발을 공부하는 박주연의 포트폴리오"
