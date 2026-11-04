@@ -15,7 +15,8 @@
           <div class="fade-in delay-{{ add $idx 1 }}">
             <div class="flex gap-6" style="gap: 1.5rem;">
               <!-- Dot column -->
-              <div class="shrink-0" style="width: 60px; display: flex; flex-direction: column; align-items: center; padding-top: 0.5rem;">
+              <div class="shrink-0"
+                style="width: 60px; display: flex; flex-direction: column; align-items: center; padding-top: 0.5rem;">
                 <div class="timeline-dot"></div>
               </div>
 
@@ -32,28 +33,52 @@
                   <p class="context-quote">{{ . }}</p>
                   {{ end }}
 
-                  <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                  <ul
+                    style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
                     {{ range $exp.bullets }}
                     <li class="flex items-start gap-3">
-                      <svg class="icon-sm shrink-0" style="margin-top: 0.125rem; color: hsl(var(--primary) / 0.6);" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                      <svg class="icon-sm shrink-0" style="margin-top: 0.125rem; color: hsl(var(--primary) / 0.6);"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                      </svg>
                       <span class="text-sm text-muted leading-relaxed">{{ . }}</span>
                     </li>
                     {{ end }}
                   </ul>
 
                   {{ with $exp.projects }}
-                  <div style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border) / 0.5);">
+                  <div
+                    style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border) / 0.5);">
                     <p class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Selected Work</p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {{ range . }}
                       <div class="project-mini">
-                        <p class="text-sm font-semibold text-foreground mb-1">{{ .title }}</p>
-                        <p class="text-xs text-muted leading-relaxed mb-2">{{ .desc }}</p>
+
+                        <!-- 프로젝트 제목 -->
+                        <p class="text-sm font-semibold text-foreground mb-1">
+                          {{ .title }}
+                        </p>
+
+                        <!-- 프로젝트 설명 -->
+                        <p class="text-xs text-muted leading-relaxed mb-2">
+                          {{ .desc }}
+                        </p>
+
+                        <!-- 사용 기술 -->
                         <div class="flex flex-wrap gap-1">
                           {{ range .tags }}
                           <span class="badge">{{ . }}</span>
                           {{ end }}
                         </div>
+
+                        <!-- GitHub 저장소 링크 -->
+                        {{ with .link }}
+                        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-xs text-primary"
+                          style="display: inline-block; margin-top: 0.75rem; text-decoration: underline;">
+                          GitHub 저장소 보기 &rarr;
+                        </a>
+                        {{ end }}
                       </div>
                       {{ end }}
                     </div>
@@ -61,7 +86,8 @@
                   {{ end }}
 
                   {{ with $exp.media_mentions }}
-                  <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border) / 0.5); display: flex; flex-direction: column; gap: 0.75rem;">
+                  <div
+                    style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid hsl(var(--border) / 0.5); display: flex; flex-direction: column; gap: 0.75rem;">
                     {{ range . }}
                     <a href="{{ .url }}" target="_blank" rel="noreferrer" class="media-mention">
                       <div class="shrink-0" style="margin-top: 0.125rem;">
@@ -71,7 +97,12 @@
                         <p class="text-xs text-muted leading-relaxed mb-2">{{ .excerpt }}</p>
                         <p class="text-primary font-semibold flex items-center gap-1" style="font-size: 0.6875rem;">
                           {{ .publication }} · {{ .article_title }}
-                          <svg class="icon-sm" style="width: 0.75rem; height: 0.75rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                          <svg class="icon-sm" style="width: 0.75rem; height: 0.75rem;" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                          </svg>
                         </p>
                       </div>
                     </a>
