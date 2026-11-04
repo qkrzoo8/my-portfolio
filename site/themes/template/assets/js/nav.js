@@ -119,13 +119,23 @@
 
     var scrollBehavior = reduceMotion ? 'auto' : 'smooth';
 
+
     if (id === 'top') {
       window.scrollTo({
         top: 0,
         behavior: scrollBehavior
       });
+
+      // 맨 위로 이동하면 URL의 섹션 주소 제거
+      window.history.replaceState(
+        null,
+        '',
+        window.location.pathname + window.location.search
+      );
+
       return;
     }
+
 
     var el = document.getElementById(id);
     if (!el) return;
