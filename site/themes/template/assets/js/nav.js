@@ -17,14 +17,48 @@
     closeMobileMenu();
   }
 
-  // Scroll detection for navbar background
+
+  // 스크롤 위치에 따라 현재 섹션과 메뉴 강조
   function handleScroll() {
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
+
+    var sectionIds = [
+      'about',
+      'experience',
+      'creativeworks',
+      'skills',
+      'education',
+      'contact'
+    ];
+
+    var activeSection = '';
+
+    sectionIds.forEach(function (id) {
+      var section = document.getElementById(id);
+
+      if (section && section.getBoundingClientRect().top <= NAV_HEIGHT + 120) {
+        activeSection = id;
+      }
+    });
+
+    document.querySelectorAll('.nav-link[data-scroll], .mobile-nav-link[data-scroll]')
+      .forEach(function (link) {
+        var isActive = link.getAttribute('data-scroll') === activeSection;
+
+        link.classList.toggle('active', isActive);
+
+        if (isActive) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
   }
+
 
   // Mobile menu toggle
   function toggleMobileMenu() {
