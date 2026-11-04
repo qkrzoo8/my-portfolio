@@ -1,278 +1,67 @@
-# kiyomi-portfolio
 
-A single-page [Hugo](https://gohugo.io) portfolio theme with an animated hero,
-experience timeline, clickable skills, presentations, education/certifications,
-awards, and a floating contact button. Content is driven entirely by simple
-YAML data files and site params, so you can build a polished personal site
-without touching any templates.
+# 박주연 | Personal Portfolio
 
-- License: MIT
-- Hugo: extended, `>= 0.128.0`
+Hugo와 GitHub Pages를 활용하여 제작한 개인 포트폴리오 웹사이트입니다.
 
-![screenshot](https://raw.githubusercontent.com/mathscantor/hugo-theme-kiyomi-portfolio/main/images/screenshot.png)
+컴퓨터·인공지능 분야의 학습 경험과 개발 프로젝트,
+기술 역량 및 활동 내용을 소개합니다.
 
-## Features
+## 배포 사이트
 
-- Single-page layout with smooth-scroll navigation and a mobile menu
-- Scroll-reveal animations and staggered transitions
-- Hero with profile photo, tagline, location, and quick contact links
-- Experience timeline with optional projects and media mentions
-- Clickable skill pills with per-skill explanations + language proficiency bars
-- Presentations grid supporting images or videos
-- Education and certifications columns
-- Awards & recognition cards
-- Floating contact button (email / LinkedIn) and downloadable resume link
-- Every section auto-hides when its data is absent
+https://qkrzoo8.github.io/my-portfolio/
 
-## Requirements
+## 기술 스택
 
-- Hugo **extended** edition, version **0.128.0** or newer.
+- Hugo
+- HTML / CSS / JavaScript
+- YAML / TOML
+- Git / GitHub
+- GitHub Actions
+- GitHub Pages
 
-## Installation
+## 주요 기능
 
-### Option A: Git submodule
+- 자기소개 및 프로필 이미지
+- 개발 프로젝트와 GitHub 저장소 연결
+- 기술 역량 및 언어 숙련도 표시
+- 학력 및 자격증 소개
+- 학생회 홍보 콘텐츠 갤러리
+- GitHub 및 이메일 연락처
+- 반응형 모바일 메뉴
+- 키보드 본문 바로가기
+- 사용자 정의 404 오류 페이지
+- 카카오톡 등 SNS 링크 공유 이미지
 
-From the root of your Hugo site:
+## 프로젝트 구조
 
-```bash
-git submodule add https://github.com/mathscantor/hugo-theme-kiyomi-portfolio.git themes/kiyomi-portfolio
-```
+- `site/hugo.toml`: 사이트 기본 설정
+- `site/content/`: 자기소개 콘텐츠
+- `site/data/`: 프로젝트, 기술, 학력 등 데이터
+- `site/static/`: 이미지 및 아이콘
+- `site/themes/template/`: HTML, CSS, JavaScript 테마
+- `.github/workflows/`: GitHub Actions 배포 설정
 
-Then set the theme in your `hugo.toml`:
+## 로컬 실행
 
-```toml
-theme = 'kiyomi-portfolio'
-```
-
-### Option B: Hugo Modules
-
-Initialize modules (once) and import the theme:
+Hugo Extended 0.128.0 이상이 설치된 환경에서 실행합니다.
 
 ```bash
-hugo mod init github.com/you/your-site
+cd site
+hugo server
 ```
 
-```toml
-# hugo.toml
-[module]
-  [[module.imports]]
-    path = "github.com/mathscantor/hugo-theme-kiyomi-portfolio"
-```
+실행 후 http://localhost:1313/ 에서 확인할 수 있습니다.
 
-```bash
-hugo mod get -u
-```
+## 배포 방법
 
-## Quick start
+GitHub의 `main` 브랜치에 코드를 push하면
+GitHub Actions가 Hugo 사이트를 빌드하고
+GitHub Pages에 자동으로 배포합니다.
 
-1. Install the theme (above) and set `theme = 'kiyomi-portfolio'`.
-2. Copy the starter data into your site (only fills in files you don't have):
+## 원본 테마 및 출처
 
-   ```bash
-   bash themes/kiyomi-portfolio/scripts/init-data.sh
-   ```
+- Theme: Kiyomi Portfolio
+- Original: https://github.com/mathscantor/hugo-theme-kiyomi-portfolio
+- Theme License: MIT
 
-   Or do it manually with a no-clobber copy:
-
-   ```bash
-   cp -rn themes/kiyomi-portfolio/exampleSite/data/. data/
-   cp -n  themes/kiyomi-portfolio/exampleSite/content/_index.md content/_index.md
-   ```
-
-3. Edit `hugo.toml` `[params]`, the files in `data/`, and `content/_index.md`.
-4. Add your images under `static/` (see [Assets](#assets)).
-5. Run the dev server:
-
-   ```bash
-   hugo server
-   ```
-
-You can also preview the bundled demo directly from the theme:
-
-```bash
-cd themes/kiyomi-portfolio/exampleSite
-hugo server --themesDir ../..
-```
-
-## Configuration (site params)
-
-Set these under `[params]` in your `hugo.toml`:
-
-| Param            | Purpose                                   | Example                                        |
-| ---------------- | ----------------------------------------- | ---------------------------------------------- |
-| `firstName`      | First name (hero, nav, footer)            | `"Jane"`                                       |
-| `lastName`       | Last name (nav, footer, resume filename)  | `"Doe"`                                         |
-| `tagline`        | Short role/tagline under the hero name    | `"Software Engineer"`                          |
-| `email`          | Contact email (hero, contact, FAB)        | `"jane.doe@example.com"`                       |
-| `linkedin`       | LinkedIn profile URL                      | `"https://www.linkedin.com/in/example/"`       |
-| `location`       | Location label in the hero                | `"Remote"`                                     |
-| `profileImage`   | Hero profile photo path                   | `"/images/profile.png"`                        |
-| `heroBackground` | Hero background image path                | `"/images/hero-bg.png"`                        |
-| `favicon`        | Favicon path (SVG)                        | `"/favicon.svg"`                               |
-| `ogImage`        | Open Graph / Twitter share image          | `"/opengraph.jpg"`                             |
-| `resumeFile`     | Downloadable resume path                  | `"/resume.pdf"`                                |
-| `description`    | Meta description + social card text       | `"Jane Doe — Software Engineer"`               |
-
-The site `title` (top-level in `hugo.toml`) is used for the `<title>` tag and
-social cards.
-
-## About section content
-
-The **About** section renders the body of `content/_index.md`. Add a `title`
-in front matter and write your intro as Markdown:
-
-```markdown
----
-title: "Jane Doe — Software Engineer"
----
-
-Hi, I'm Jane. Replace this with a short introduction about yourself.
-```
-
-## Data reference
-
-All data files live in your site's `data/` directory. Each maps to a section;
-if a file is missing or empty, that section is hidden.
-
-### `data/experience.yaml`
-
-A list of roles, newest first. `context`, `projects`, and `media_mentions` are
-optional.
-
-```yaml
-- company: "Example Corp"
-  title: "Senior Software Engineer"
-  period: "Jan 2022 - Present"
-  context: "Optional one-line description of the company or team."
-  bullets:
-    - "A key responsibility or achievement."
-    - "Another concise bullet point."
-  projects:                       # optional
-    - title: "Sample Project"
-      desc: "What this project does."
-      tags: ["Go", "Distributed Systems"]
-  media_mentions:                 # optional
-    - publication: "Example News"
-      article_title: "How Example Corp shipped X"
-      excerpt: "A short quote or summary."
-      url: "https://example.com/article"
-```
-
-### `data/presentations.yaml`
-
-A list of talks. `media_type` is `"image"` or `"video"`; `media_src` points to
-a file under `static/`. `description` and `link` are optional.
-
-```yaml
-- title: "An Example Conference Talk"
-  event: "Sample Conference 2025"
-  date: "Oct 2025"
-  description: "A short summary of the talk."
-  tags: ["Topic A", "Topic B"]
-  media_type: "image"             # or "video"
-  media_src: "/images/talk.png"
-  link: "https://example.com/slides"   # optional
-```
-
-### `data/skills.yaml`
-
-Skills grouped by category. Each skill exposes an `explanation` shown when the
-pill is clicked.
-
-```yaml
-- category: "Technical"
-  items:
-    - name: "Go"
-      explanation: "Used to build backend services and CLI tools."
-    - name: "Python"
-      explanation: "Used for scripting and automation."
-```
-
-### `data/languages.yaml`
-
-Spoken languages with a `level` label and a `percent` (0-100) for the bar.
-
-```yaml
-- name: "English"
-  level: "Native"
-  percent: 100
-```
-
-### `data/education.yaml`
-
-Education history, newest first.
-
-```yaml
-- degree: "BSc in Computer Science"
-  school: "Example University"
-  year: "2019"
-```
-
-### `data/certifications.yaml`
-
-Certifications grouped by year, newest first.
-
-```yaml
-- year: "2025"
-  items:
-    - "Example Professional Certification"
-```
-
-### `data/awards.yaml`
-
-Awards & recognition cards. Each links to `link`. Remove or empty the file to
-hide the Awards section.
-
-```yaml
-- title: "Example Award of Excellence"
-  source: "Sample Organization"
-  link: "https://example.com"
-```
-
-## Assets
-
-The theme references several files via params and presentation `media_src`.
-Place them under your site's `static/` directory:
-
-| Asset            | Default path (under `static/`)     |
-| ---------------- | ---------------------------------- |
-| Profile photo    | `images/profile.png`               |
-| Hero background  | `images/hero-bg.png`               |
-| Favicon          | `favicon.svg`                      |
-| Open Graph image | `opengraph.jpg`                    |
-| Resume           | `resume.pdf`                       |
-| Presentation art | `images/<your-file>.png` / `.mp4`  |
-
-These are intentionally not shipped with the theme; supply your own.
-
-## Customization
-
-Colors, fonts, radius, and spacing are defined as CSS custom properties at the
-top of `assets/css/main.css` (`:root { --primary: ...; --font-display: ...; }`).
-Override them in your own CSS, or fork the theme's stylesheet. Animations live
-in `assets/css/animations.css`.
-
-## How placeholder data works
-
-Hugo never writes into your source tree during a build, so the theme cannot
-"auto-create" files in your `data/` directory. The theme also intentionally
-does **not** ship a top-level `data/` directory, so your project's `data/`
-files are always authoritative: whatever you put in `data/` is exactly what
-renders, and an empty or missing file simply hides that section (each section
-is guarded in `layouts/index.html`).
-
-To get started quickly, use the editable starter files instead:
-
-- **Copy-if-missing starter (recommended).** `exampleSite/` contains a complete
-  working site. The `scripts/init-data.sh` helper (or the `cp -rn` one-liner
-  above) copies those data files and `content/_index.md` into your site **only
-  when they don't already exist**, so you get editable copies without ever
-  clobbering your own work. Re-running it is safe.
-
-Because there are no theme-level data defaults, you never see Hugo's
-"overridden by higher precedence data" warnings, and you stay in full control
-of every section.
-
-## License
-
-MIT. See the [LICENSE](LICENSE) file for the full text.
+원본 테마를 기반으로 콘텐츠, 디자인 및 기능을 수정했습니다.
