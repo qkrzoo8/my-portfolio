@@ -21,6 +21,7 @@
   {{ $nav := resources.Get "js/nav.js" }}
   {{ $skillsToggle := resources.Get "js/skills-toggle.js" }}
   {{ $contactFab := resources.Get "js/contact-fab.js" }}
+  {{ $copyLink := resources.Get "js/copy-link.js" }}
   {{ if $scrollReveal }}
   <script defer src="{{ $scrollReveal.RelPermalink }}"></script>{{ end }}
   {{ if $nav }}
@@ -29,6 +30,8 @@
   <script defer src="{{ $skillsToggle.RelPermalink }}"></script>{{ end }}
   {{ if $contactFab }}
   <script defer src="{{ $contactFab.RelPermalink }}"></script>{{ end }}
+  {{ if $copyLink }}
+  <script defer src="{{ $copyLink.RelPermalink }}"></script>{{ end }}
 </body>
 
 </html>

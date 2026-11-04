@@ -1,8 +1,19 @@
-<footer style="padding: 2rem 0; background-color: hsl(var(--foreground)); color: hsl(var(--background)); border-top: 1px solid hsl(var(--border) / 0.1);">
+<footer
+  style="padding: 2rem 0; background-color: hsl(var(--foreground)); color: hsl(var(--background)); border-top: 1px solid hsl(var(--border) / 0.1);">
   <div class="container flex items-center justify-between" style="flex-wrap: wrap; gap: 1rem; max-width: 80rem;">
     <p class="text-sm" style="opacity: 0.6;">
       &copy; {{ now.Year }} {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}. All rights reserved.
     </p>
+
+    <!-- 포트폴리오 주소 복사 버튼 -->
+    <button type="button" id="copy-portfolio-link" data-url="{{ .Site.Home.Permalink }}"
+      style="background: none; color: inherit; border: 1px solid currentColor; border-radius: 0.5rem; padding: 0.4rem 0.8rem; font-size: 0.875rem; cursor: pointer;">
+      포트폴리오 주소 복사
+    </button>
+
+    <!-- 복사 결과 안내 -->
+    <span id="copy-link-status" role="status" aria-live="polite" class="text-sm"></span>
+
     <a href="#top" class="text-sm transition-colors" style="opacity: 0.8;" data-scroll="top">
       Back to Top
     </a>
