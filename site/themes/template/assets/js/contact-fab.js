@@ -21,4 +21,14 @@
       fab.setAttribute('aria-expanded', 'false');
     }
   });
+
+  // Esc 키로 연락처 창 닫기
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && popover.classList.contains('open')) {
+      popover.classList.remove('open');
+      fab.setAttribute('aria-expanded', 'false');
+      fab.focus();
+    }
+  });
+
 })();
