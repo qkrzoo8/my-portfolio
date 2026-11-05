@@ -7,16 +7,18 @@
     var prevButton = document.getElementById('creative-lightbox-prev');
     var nextButton = document.getElementById('creative-lightbox-next');
     var counter = document.getElementById('creative-lightbox-counter');
-
+    var caption = document.getElementById('creative-lightbox-caption');
     var imageButtons = Array.from(
         document.querySelectorAll('.creative-image-trigger')
     );
 
+
     if (!lightbox || !lightboxImage || !closeButton ||
-        !prevButton || !nextButton || !counter ||
+        !prevButton || !nextButton || !counter || !caption ||
         imageButtons.length === 0) {
         return;
     }
+
 
     var currentIndex = 0;
 
@@ -30,6 +32,7 @@
 
         lightboxImage.src = button.getAttribute('data-image');
         lightboxImage.alt = button.getAttribute('data-alt');
+        caption.textContent = button.getAttribute('data-alt');
 
         counter.textContent =
             (currentIndex + 1) + ' / ' + imageButtons.length;
