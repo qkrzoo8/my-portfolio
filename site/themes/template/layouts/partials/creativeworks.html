@@ -25,10 +25,18 @@
             <div
               style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: 0.75rem; padding: 1rem;">
 
+
               {{ range $index, $image := $item.images }}
-              <img src="{{ $image | relURL }}" alt="{{ $item.title }} 홍보물 {{ add $index 1 }}" loading="lazy"
-                style="display: block; width: 100%; height: auto; border-radius: 0.5rem;">
+              <button type="button" class="creative-image-trigger" data-image="{{ $image | relURL }}"
+                data-alt="{{ $item.title }} 홍보물 {{ add $index 1 }}"
+                aria-label="{{ $item.title }} 홍보물 {{ add $index 1 }} 크게 보기">
+
+                <img src="{{ $image | relURL }}" alt="{{ $item.title }} 홍보물 {{ add $index 1 }}" loading="lazy"
+                  style="display: block; width: 100%; height: auto; border-radius: 0.5rem;">
+
+              </button>
               {{ end }}
+
 
             </div>
 
@@ -93,4 +101,39 @@
       </div>
     </div>
   </div>
+
+  <!-- Creative Works 이미지 확대 창 -->
+  <dialog id="creative-lightbox" aria-label="홍보물 확대 보기" style="width: min(90vw, 900px);
+         max-height: 90vh;
+         padding: 1rem;
+         border: none;
+         border-radius: 12px;
+         background: #ffffff;">
+
+    <!-- 확대 창 닫기 버튼 -->
+    <button type="button" id="creative-lightbox-close" aria-label="확대 창 닫기" style="position: absolute;
+           top: 10px;
+           right: 10px;
+           width: 36px;
+           height: 36px;
+           border: none;
+           border-radius: 50%;
+           background: #182b47;
+           color: white;
+           font-size: 24px;
+           cursor: pointer;">
+      ×
+    </button>
+
+    <!-- 확대된 이미지 -->
+    <img id="creative-lightbox-image" alt="확대된 홍보물" style="display: block;
+           max-width: 100%;
+           max-height: 78vh;
+           width: auto;
+           height: auto;
+           object-fit: contain;
+           margin: 0 auto;">
+
+  </dialog>
+
 </section>

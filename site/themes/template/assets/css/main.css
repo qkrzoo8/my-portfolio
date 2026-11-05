@@ -1650,3 +1650,42 @@ footer a:focus-visible,
   outline: 3px solid #ffffff;
   outline-offset: 4px;
 }
+
+
+/* Creative Works 이미지 확대 버튼 */
+.creative-image-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+/* 마우스를 올리면 이미지가 살짝 확대됨 */
+.creative-image-trigger img {
+  transition: transform 0.25s ease;
+}
+
+.creative-image-trigger:hover img {
+  transform: scale(1.04);
+}
+
+/* 키보드 포커스 표시 */
+.creative-image-trigger:focus-visible {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 4px;
+}
+
+/* 이미지 확대 창의 어두운 배경 */
+#creative-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* 확대 창 닫기 버튼의 키보드 포커스 */
+#creative-lightbox-close:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
