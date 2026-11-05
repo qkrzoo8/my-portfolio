@@ -73,6 +73,39 @@
         }
     });
 
+    // 모바일 터치 스와이프로 이미지 이동
+    var touchStartX = 0;
+    var touchStartY = 0;
+
+    lightboxImage.addEventListener('touchstart', function (event) {
+        if (event.touches.length !== 1) return;
+
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    }, { passive: true });
+
+    lightboxImage.addEventListener('touchend', function (event) {
+        if (!lightbox.open || event.changedTouches.length !== 1) return;
+
+        var touchEndX = event.changedTouches[0].clientX;
+        var touchEndY = event.changedTouches[0].clientY;
+
+        var diffX = touchEndX - touchStartX;
+        var diffY = touchEndY - touchStartY;
+
+        // 일정 거리 이상 좌우로 움직였을 때만 사진 변경
+        if (Math.abs(diffX) < 50 ||
+            Math.abs(diffX) <= Math.abs(diffY) * 1.2) {
+            return;
+        }
+
+        if (diffX < 0) {
+            showImage(currentIndex + 1);
+        } else {
+            showImage(currentIndex - 1);
+        }
+    }, { passive: true });
+
     // 확대 창 바깥쪽 클릭 시 닫기
     lightbox.addEventListener('click', function (event) {
         if (event.target === lightbox) {
