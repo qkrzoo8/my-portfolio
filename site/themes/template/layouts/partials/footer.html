@@ -5,6 +5,17 @@
       &copy; {{ now.Year }} {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}. All rights reserved.
     </p>
 
+    <!-- 포트폴리오 PDF 저장 버튼 -->
+    <button type="button" id="print-portfolio" style="background: none;
+         color: inherit;
+         border: 1px solid currentColor;
+         border-radius: 0.5rem;
+         padding: 0.4rem 0.8rem;
+         font-size: 0.875rem;
+         cursor: pointer;">
+      PDF로 저장
+    </button>
+
     <!-- 포트폴리오 주소 복사 버튼 -->
     <button type="button" id="copy-portfolio-link" data-url="{{ .Site.Home.Permalink }}"
       style="background: none; color: inherit; border: 1px solid currentColor; border-radius: 0.5rem; padding: 0.4rem 0.8rem; font-size: 0.875rem; cursor: pointer;">
