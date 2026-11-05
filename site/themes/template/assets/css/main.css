@@ -1632,3 +1632,21 @@ button {
     transition: none;
   }
 }
+
+
+/* 키보드 포커스 시 선택된 요소 강조 */
+.nav-link:focus-visible,
+.mobile-nav-link:focus-visible,
+.project-mini a:focus-visible,
+.contact-link:focus-visible {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* 어두운 Footer에서 키보드 포커스 강조 */
+footer a:focus-visible,
+#copy-portfolio-link:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
