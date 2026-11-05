@@ -134,6 +134,27 @@
            object-fit: contain;
            margin: 0 auto;">
 
+    <!-- 이미지 이전 / 다음 이동 버튼 -->
+    <div style="display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;">
+
+      <button type="button" id="creative-lightbox-prev" aria-label="이전 홍보물" class="btn btn-outline">
+        ← 이전
+      </button>
+
+      <span id="creative-lightbox-counter" aria-live="polite" style="font-size: 0.875rem; white-space: nowrap;">
+        1 / 1
+      </span>
+
+      <button type="button" id="creative-lightbox-next" aria-label="다음 홍보물" class="btn btn-outline">
+        다음 →
+      </button>
+
+    </div>
+
   </dialog>
 
 </section>
