@@ -19,7 +19,7 @@
 
 
   // 스크롤 위치에 따라 현재 섹션과 메뉴 강조
-  function handleScroll() {
+  function handleScroll(updateUrl) {
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
     } else {
@@ -73,7 +73,23 @@
       // 진행률을 0~100% 범위로 제한
       progress = Math.min(100, Math.max(0, progress));
 
+
       progressBar.style.width = progress + '%';
+    }
+
+    // 직접 스크롤할 때 현재 섹션을 URL에 반영
+    if (updateUrl) {
+      var newHash = window.scrollY <= 20
+        ? ''
+        : (activeSection ? '#' + activeSection : '');
+
+      if (window.location.hash !== newHash) {
+        window.history.replaceState(
+          null,
+          '',
+          window.location.pathname + window.location.search + newHash
+        );
+      }
     }
   }
 
@@ -155,7 +171,11 @@
 
 
   // Event listeners
-  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  window.addEventListener('scroll', function () {
+    handleScroll(true);
+  }, { passive: true });
+
   window.addEventListener('resize', updateNavVisibility);
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMobileMenu);
