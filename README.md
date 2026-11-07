@@ -43,14 +43,73 @@ https://qkrzoo8.github.io/my-portfolio/
 
 ## 로컬 실행
 
-Hugo Extended 0.128.0 이상이 설치된 환경에서 실행합니다.
+
+## 로컬 실행
+
+### 사전 준비
+
+- Git 설치
+- Hugo Extended 설치
+- 권장 Hugo 버전: 0.167.0 (GitHub Actions 배포 환경과 동일)
+
+### 프로젝트 내려받기
 
 ```bash
-cd site
+git clone https://github.com/qkrzoo8/my-portfolio.git
+cd my-portfolio/site
+```
+
+### 개발 서버 실행
+
+```bash
+hugo version
 hugo server
 ```
 
-실행 후 http://localhost:1313/ 에서 확인할 수 있습니다.
+브라우저에서 http://localhost:1313/ 에 접속하면
+포트폴리오를 확인할 수 있습니다.
+
+### 정적 사이트 빌드 확인
+
+```bash
+hugo --minify
+```
+
+빌드에 성공하면 `site/public/` 폴더에 정적 사이트 파일이 생성됩니다.
+
+## 배포 방법
+
+이 프로젝트는 GitHub Actions를 통해 GitHub Pages에 자동 배포됩니다.
+
+1. 프로젝트 파일을 수정하고 저장합니다.
+2. 수정 사항을 Git으로 커밋합니다.
+3. `main` 브랜치에 push합니다.
+4. GitHub Actions의 배포 작업이 성공했는지 확인합니다.
+5. 배포 사이트에 접속하여 변경 사항을 검증합니다.
+
+### 변경 사항 업로드
+
+프로젝트 최상위 폴더에서 실행합니다.
+
+```bash
+git add .
+git commit -m "docs: README 실행 및 재배포 안내 보완"
+git push origin main
+```
+
+### 배포 결과 확인
+
+- Actions: https://github.com/qkrzoo8/my-portfolio/actions
+- 배포 사이트: https://qkrzoo8.github.io/my-portfolio/
+
+Actions에서 `Deploy Hugo to GitHub Pages` 실행이
+성공했는지 확인합니다.
+
+GitHub Pages의 배포 소스는 GitHub Actions로 설정합니다.
+
+실제 자동 배포에서는 `.github/workflows/hugo-pages.yml`과
+`.github/pages_build.py`를 사용하여 사이트를 빌드합니다.
+
 
 ## 배포 방법
 
