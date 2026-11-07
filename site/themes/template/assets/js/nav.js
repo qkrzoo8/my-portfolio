@@ -185,9 +185,21 @@
   document.querySelectorAll('[data-scroll]').forEach(function (el) {
     el.addEventListener('click', function (e) {
       e.preventDefault();
+
       var target = el.getAttribute('data-scroll');
+
+      // 현재 페이지에 대상 섹션이 없다면 홈으로 이동
+      if (!document.getElementById(target)) {
+        var homeUrl = navbar.getAttribute('data-home-url');
+        window.location.href = homeUrl + '#' + target;
+        return;
+      }
+
       closeMobileMenu();
-      setTimeout(function () { scrollToSection(target); }, 10);
+
+      setTimeout(function () {
+        scrollToSection(target);
+      }, 10);
     });
   });
 
